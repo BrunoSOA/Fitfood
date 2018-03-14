@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.formation.entity.Formation;
 
-public interface  IFormationDao {
+public interface IFormationDao {
 	
 	public void save(Formation entity);
 
