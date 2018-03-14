@@ -1,0 +1,25 @@
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
+	version="2.0">
+	<navigation-rule>
+		<display-name>Home</display-name>
+		<from-view-id>/index.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>echec</from-outcome>
+			<to-view-id>/echec.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>HomeD</from-outcome>
+			<to-view-id>/connexion.xhtml</to-view-id>
+		</navigation-case>
+	 	<navigation-case>
+			<from-outcome>profil</from-outcome>
+			<to-view-id>/profil.xhtml</to-view-id>
+		</navigation-case> 
+		<navigation-case>
+			<from-outcome>Inscription</from-outcome>
+			<to-view-id>/inscription.xhtml</to-view-id>
+		</navigation-case>
+		</navigation-rule>
+</faces-config>

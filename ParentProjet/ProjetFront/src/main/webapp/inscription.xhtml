@@ -1,0 +1,308 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+
+<h:head>
+
+	<!-- Required meta tags -->
+	<meta charset="utf-8" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+		integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+		crossorigin="anonymous" />
+
+	<title>FitFood® | Rejoignez l'aventure !</title>
+
+</h:head>
+
+
+<h:body>
+	<style>
+
+/* CSS Document */
+html, body {
+	height: 100%;
+	background-color: #333;
+}
+
+body {
+	color: #fff;
+	text-align: center;
+	text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+}
+
+/* Extra markup and styles for table-esque vertical and horizontal centering */
+.site-wrapper {
+	display: table;
+	width: 100%;
+	height: 100%; /* For at least Firefox */
+	min-height: 100%;
+	box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
+	background: url("resources/images/back2.jpg") no-repeat fixed
+}
+
+.site-wrapper-inner {
+	display: table-cell;
+	vertical-align: top;
+}
+
+.cover-container {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+/*
+ * Header
+ */
+.header {
+	margin-bottom: 2rem;
+}
+
+/* Padding for spacing */
+.inner {
+	padding: 2rem;
+}
+
+.nav-header .nav-link {
+	padding: .25rem 0;
+	font-weight: 700;
+	color: #373737;
+	background-color: transparent;
+	border-bottom: .15rem solid transparent;
+}
+
+.nav-header .nav-link:hover, .nav-header .nav-link:focus {
+	border-bottom-color: #373737;
+}
+
+.nav-header .nav-link+.nav-link {
+	margin-left: 2.5rem;
+}
+
+.nav-header .active {
+	color: #FFF;
+	border-bottom-color: #fff;
+}
+
+@media ( min-width : 48em) {
+	.nav-header {
+		float: right;
+	}
+}
+
+.main {
+	margin: 50px 15px;
+}
+
+h1.title {
+	font-size: 50px;
+	font-family: 'Passion One', cursive;
+	font-weight: 400;
+}
+
+hr {
+	width: 10%;
+	color: #fff;
+}
+
+.form-group {
+	margin: 2% auto;
+}
+
+label {
+	margin-bottom: 15px;
+}
+
+input, input::-webkit-input-placeholder {
+	font-size: 11px;
+	padding-top: 3px;
+}
+
+.main-login {
+	background-color: #fff;
+	/* shadows and rounded borders */
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	-moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.form-control {
+	height: auto !important;
+	padding: 8px 12px !important;
+}
+
+.input-group {
+	-webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.21) !important;
+	-moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.21) !important;
+	box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.21) !important;
+}
+
+.main-center {
+	margin: 70px auto;
+	max-width: 400px;
+	padding: 10px 40px;
+	background-color: #181D1F;
+	color: #FFF;
+	text-shadow: none;
+	-webkit-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.31);
+	-moz-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.31);
+	box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.31);
+}
+
+span.input-group-addon i {
+	color: #486BBD;
+	font-size: 17px;
+}
+
+.login-button {
+	margin-top: 10%;
+}
+
+.login-register {
+	font-size: 10px;
+	text-align: center;
+}
+</style>
+
+	<div class="site-wrapper">
+		<div class="site-wrapper-inner">
+			<div class="cover-container">
+
+				<!-- <header class="header clearfix">
+					<div class="inner">
+						<nav class="nav nav-header">
+							<a class="nav-link active" href="#">Home</a> 
+							<a class="nav-link active" href="#">Inscription</a> 
+							<a class="nav-link active" href="#">Profil</a> 
+						</nav>
+					</div>
+				</header> -->
+
+				<!-- <main class="inner-cover" role="main"> -->
+
+				<div class="container">
+					<div class="row main">
+						<div class="main-login main-center">
+							<h5>Inscrivez-vous pour commencer à suivre le programme.</h5>
+
+							<h:form id="contact">
+								<div class="form-group">
+									<label for="lastname" class="cols-sm-2 control-label">Nom</label>
+									<div class="cols-sm-10">
+										<div class="input-group">
+
+											<h:inputText class="form-control" name="lastname"
+												id="lastname" placeholder="Entrez votre nom" type="text"
+												value="#{inscriptionCtrl.membre.firstName}" />
+										</div>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label for="firstname" class="cols-sm-2 control-label">Prénom</label>
+									<div class="cols-sm-10">
+										<div class="input-group">
+											<h:inputText type="text" class="form-control"
+												name="firstname" id="firstname"
+												placeholder="Entrez votre prénom"
+												value="#{inscriptionCtrl.membre.lastName}" />
+										</div>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label for="email" class="cols-sm-2 control-label">Email</label>
+									<div class="cols-sm-10">
+										<div class="input-group">
+											<h:inputText class="form-control" name="email" id="email"
+												placeholder="Entrez votre email" type="mail"
+												value="#{inscriptionCtrl.membre.mail}" />
+										</div>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label for="sexe" class="cols-sm-2 control-label">Sexe</label>
+									<div class="cols-sm-10">
+										<div class="input-group">
+											<h:inputText type="sexuality" class="form-control"
+												name="sexe" id="sexe" value="#{inscriptionCtrl.membre.sexe}" />
+										</div>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label for="sexe" class="cols-sm-2 control-label">Age</label>
+									<div class="cols-sm-10">
+										<div class="input-group">
+											<h:inputText type="sexuality" class="form-control"
+												name="age" id="age" value="#{inscriptionCtrl.membre.age}" />
+										</div>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label for="password" class="cols-sm-2 control-label">Password</label>
+									<div class="cols-sm-10">
+										<div class="input-group">
+											<h:inputText type="password" class="form-control"
+												name="password" id="password"
+												placeholder="Entrez votre mot de passe"
+												value="#{inscriptionCtrl.membre.passWord}" />
+										</div>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label for="confirm" class="cols-sm-2 control-label">Confirm
+										Password</label>
+									<div class="cols-sm-10">
+										<div class="input-group">
+											<h:inputText type="password" class="form-control"
+												name="confirm" id="confirm"
+												placeholder="Confirmez votre mot de passe"
+												value="#{inscriptionCtrl.confirmation}" />
+										</div>
+									</div>
+								</div>
+
+								<div class="form-group ">
+									<h:commandButton value="Inscription"
+										class="btn btn-success btn-lg btn-block login-button"
+										action="#{inscriptionCtrl.saveMembre}" />
+								</div>
+							</h:form>
+						</div>
+
+					</div>
+				</div>
+
+				<!-- </main> -->
+
+				<footer class="footer">
+					<p class="lead">Healthy project lead by Bruno Soares Simoes</p>
+				</footer>
+
+			</div>
+		</div>
+	</div>
+
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/bootstrap.min.js"></script>
+
+</h:body>
+</html>

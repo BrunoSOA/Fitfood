@@ -1,0 +1,97 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>JSF 2.2 Hello World</title>
+</h:head>
+<h:body>
+
+	<h:form id="contact">
+		<div class="form-group">
+			<label for="lastname" class="cols-sm-2 control-label">Nom</label>
+			<div class="cols-sm-10">
+				<div class="input-group">
+
+					<h:inputText class="form-control" name="lastname" id="lastname"
+						placeholder="Entrez votre nom" type="text"
+						value="#{formationCtrl.membre.firstName}" />
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="firstname" class="cols-sm-2 control-label">Prénom</label>
+			<div class="cols-sm-10">
+				<div class="input-group">
+					<h:inputText type="text" class="form-control" name="firstname"
+						id="firstname" placeholder="Entrez votre prénom"
+						value="#{formationCtrl.membre.lastName}" />
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="email" class="cols-sm-2 control-label">Email</label>
+			<div class="cols-sm-10">
+				<div class="input-group">
+					<h:inputText class="form-control" name="email" id="email"
+						placeholder="Entrez votre email" type="mail"
+						value="#{formationCtrl.membre.mail}" />
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="sexe" class="cols-sm-2 control-label">Sexe</label>
+			<div class="cols-sm-10">
+				<div class="input-group">
+					<h:inputText type="sexuality" class="form-control" name="sexe"
+						id="sexe" value="#{formationCtrl.membre.sexe}" />
+				</div>
+			</div>
+		</div>
+
+
+		<div class="form-group">
+			<label for="password" class="cols-sm-2 control-label">Password</label>
+			<div class="cols-sm-10">
+				<div class="input-group">
+					<h:inputText type="password" class="form-control" name="password"
+						id="password" placeholder="Entrez votre mot de passe"
+						value="#{formationCtrl.membre.passWord}" />
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="confirm" class="cols-sm-2 control-label">Confirm
+				Password</label>
+			<div class="cols-sm-10">
+				<div class="input-group">
+					<h:inputText type="password" class="form-control" name="confirm"
+						id="confirm" placeholder="Confirmez votre mot de passe"
+						value="#{formationCtrl.confirmation}" />
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group ">
+			<h:commandButton value="Inscription"
+				class="btn btn-success btn-lg btn-block login-button"
+				action="#{formationCtrl.saveMembre}" />
+		</div>
+	</h:form>
+	<p:dataTable value="#{formationCtrl.allFormation}" var="item">
+		<p:column>
+			<f:facet name="header">ID</f:facet>
+			<h:outputText value="#{item.idForm}" />
+		</p:column>
+		<p:column>
+			<f:facet name="header">Desc</f:facet>
+			<h:outputText value="#{item.titre}" />
+		</p:column>
+	</p:dataTable>
+</h:body>
+</html>
